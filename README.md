@@ -6,5 +6,6 @@
 [Linkedin](https://www.linkedin.com/in/tahaghafuri/)
 [Shop](https://savenet.ir/tahaghafuri)
 [Blog](https://blog.tahaghafuri.ir/)
+[AI ChatBot](https://chat.tahaghafuri.ir/)
 [AI](https://ai.tahaghafuri.ir/)
 [Youtube](https://www.youtube.com/@tahaaminghafuri)
