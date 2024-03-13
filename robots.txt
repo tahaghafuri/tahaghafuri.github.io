@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://tahaghafuri.ir/sitemap.xml
+Sitemap: https://blog.tahaghafuri.ir/sitemap.xml
