@@ -9,3 +9,5 @@
 [AI ChatBot](https://chat.tahaghafuri.ir/)
 [AI](https://ai.tahaghafuri.ir/)
 [Youtube](https://www.youtube.com/@tahaaminghafuri)
+[SourceForge](https://sourceforge.net/u/tahaghafuri/profile/)
+[CodePen](https://codepen.io/tahaghafuri/)
