@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Taha Amin Ghafuri</title>
+    <meta
+      name="description"
+      content="php(laravel),C & C++ & C# & @python Developer & Go,Devops specialist."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web development, projects, modern, technology, programming, coding, devinow, taha amin ghafuri,tahaghafuri"
+    />
+    <meta name="author" content="Taha Amin Ghafuri" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <link rel="stylesheet" href="assets/css/slick-theme.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+    <link href="assets/css/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/OverlayScrollbars.min.css" />
+    <style>
+      :root {
+        --primary-color: #0078d4;
+        --secondary-color: rgba(230, 230, 230, 0.7);
+        --text-color: #323130;
+        --background-color: #f3f3f3;
+      }
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+        font-family: "Vazirmatn", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        background: linear-gradient(135deg, #ffffff, #e6f3ff);
+        color: var(--text-color);
+      }
+
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      }
+
+      .custom-header {
+        padding: 64px 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 120, 212, 0.8),
+          rgba(0, 120, 212, 0.6)
+        );
+        color: white;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .custom-footer {
+        padding: 32px 16px;
+        background-color: var(--secondary-color);
+        border-radius: 24px 24px 0 0;
+      }
+
+      .page {
+        display: none;
+        padding: 24px;
+        border-radius: 24px;
+        margin: 24px 0;
+      }
+
+      .page.active {
+        display: block;
+      }
+
+      .w3-button {
+        border-radius: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .w3-button:hover {
+        background-color: var(--primary-color) !important;
+        color: white !important;
+        transform: scale(1.05);
+      }
+
+      .w3-card {
+        border-radius: 24px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .w3-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .w3-input {
+        border-radius: 20px;
+        padding: 12px;
+      }
+
+      .social-icons i {
+        font-size: 24px;
+        margin-right: 16px;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .social-icons i:hover {
+        transform: scale(1.2);
+        color: #005a9e;
+      }
+
+      .skill-bar {
+        height: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .project-image {
+        transition: all 0.3s ease;
+      }
+
+      .project-image:hover {
+        transform: scale(1.05);
+      }
+
+      .slick-slide img {
+        width: 100%;
+        border-radius: 24px;
+      }
+
+      .os-host-foreign {
+        border-radius: 24px;
+      }
+
+      .os-scrollbar {
+        background-color: var(--primary-color);
+      }
+
+      .os-scrollbar-track {
+        background-color: var(--secondary-color);
+      }
+
+      .os-scrollbar-handle {
+        background-color: var(--primary-color);
+      }
+
+      .os-scrollbar-horizontal {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="w3-container custom-header w3-animate-top">
+      <div class="header-slideshow">
+        <div>
+          <img src="assets/images/1.jpg" alt="Technology and Programming" />
+        </div>
+        <div><img src="assets/images/2.jpg" alt="Coding on Laptop" /></div>
+        <div>
+          <img src="assets/images/3.jpg" alt="Modern Development Tools" />
+        </div>
+      </div>
+      <h1 class="w3-xxxlarge">Taha Amin Ghafuri</h1>
+      <p class="w3-large">
+        php(laravel),C & C++ & C# & @python Developer & Go,Devops specialist
+      </p>
+    </header>
+
+    <nav class="w3-bar glass-effect" style="border-radius: 24px; margin: 16px">
+      <a
+        href="#home"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-home"></i> Home</a
+      >
+      <a
+        href="#about"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-user"></i> About</a
+      >
+      <a
+        href="#projects"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-folder"></i> Projects</a
+      >
+      <a
+        href="#shop"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-shopping-cart"></i> Shop</a
+      >
+      <a
+        href="#contact"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-envelope"></i> Contact</a
+      >
+      <a
+        href="javascript:void(0)"
+        class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+        onclick="toggleNavMenu()"
+        >&#9776;</a
+      >
+    </nav>
+
+    <div
+      id="navDemo"
+      class="w3-bar-block glass-effect w3-hide w3-hide-large w3-hide-medium"
+      style="border-radius: 24px; margin: 16px"
+    >
+      <a
+        href="#home"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >About</a
+      >
+      <a
+        href="#projects"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >Projects</a
+      >
+      <a
+        href="#shop"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >Shop</a
+      >
+      <a
+        href="#contact"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >Contact</a
+      >
+    </div>
+
+    <main class="w3-content" style="max-width: 2000px; margin-top: 46px">
+      <div id="home" class="page active glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">
+            Welcome to My Website
+          </h2>
+          <p class="w3-center w3-large">
+            Embark on a journey through my web development expertise and
+            innovative projects.
+          </p>
+          <div class="w3-center">
+            <a
+              href="https://github.com/tahaghafuri?tab=repositories"
+              target="_blank"
+              rel="nofollow,noindex"
+              class="w3-button w3-large w3-blue w3-hover-light-blue w3-ripple"
+              >Explore My Work</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="shop" class="page glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">Shop</h2>
+          <p class="w3-center w3-large">Explore our products</p>
+          <div
+            id="shop-content"
+            class="w3-row-padding w3-center"
+            style="margin-top: 64px"
+          ></div>
+        </div>
+      </div>
+
+      <script>
+        function fetchShopData() {
+          fetch("https://tahaghafuri.ir/api/shop")
+            .then((response) => response.json())
+            .then((data) => {
+              const shopContent = document.getElementById("shop-content");
+              shopContent.innerHTML = `
+                    <div class="w3-container w3-margin-bottom">
+                        <h3>${data.SaveNet_Store_Title}</h3>
+                        <p>Offered by: ${data.SaveNet_Store_About}</p>
+                        <img src="${data.SaveNet_Store_Logo}" alt="Store Logo" style="max-width: 200px;">
+                        <p>Owner: ${data.SaveNet_Store_Admin}</p>
+                        <p>Store URL: <a href="${data.SaveNet_Store_Url}" target="_blank" rel="nofollow,noindex">${data.SaveNet_Store_Url}</a></p>
+                    </div>
+                `;
+
+              data.SaveNet_List_Entry.forEach((item) => {
+                shopContent.innerHTML += `
+                        <div class="w3-third w3-margin-bottom">
+                            <div class="w3-card w3-hover-shadow">
+                                <img src="${item.SaveNet_List_Picture}" alt="${item.SaveNet_List_Title}" style="width:100%" class="w3-hover-opacity project-image">
+                                <div class="w3-container w3-white">
+                                    <h3>${item.SaveNet_List_Title}</h3>
+                                    <p>${item.SaveNet_List_Description}</p>
+                                    <p>Size: ${item.SaveNet_List_Size}</p>
+                                    <p>Views: ${item.SaveNet_List_Visit}</p>
+                                    <p>Downloads: ${item.SaveNet_List_Download}</p>
+                                    <p>Price: ${item.SaveNet_List_Price}</p>
+                                    <button onclick="viewDetails('${item.SaveNet_List_Url}')" class="w3-button w3-blue w3-margin-bottom">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+              });
+            })
+            .catch((error) => console.error("Error:", error));
+        }
+
+        function viewDetails(url) {
+          fetch(
+            "https://tahaghafuri.ir/api/shop?url=" + encodeURIComponent(url)
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              const detailsContent = `
+                    <div class="w3-modal-content w3-card-4">
+                        <header class="w3-container w3-blue">
+                            <span onclick="document.getElementById('details-modal').style.display='none'" 
+                                class="w3-button w3-display-topright">&times;</span>
+                            <h2>${data.SaveNet_Entry_Title}</h2>
+                        </header>
+                        <div class="w3-container">
+                            <img src="${data.SaveNet_Entry_Picture}" alt="${data.SaveNet_Entry_Title}" style="width:100%">
+                            <p>${data.SaveNet_Entry_Description}</p>
+                            <p>Suitable for target users: ${data.SaveNet_Entry_Suitable}</p>
+                            <p>Size: ${data.SaveNet_Entry_Size}</p>
+                            <p>Views: ${data.SaveNet_Entry_Visit}</p>
+                            <p>Downloads: ${data.SaveNet_Entry_Download}</p>
+                            <p>Price: ${data.SaveNet_Entry_Price}</p>
+                            <a href="${data.SaveNet_Entry_Url}" target="_blank" rel="nofollow,noindex" class="w3-button w3-blue w3-margin-bottom">Buy/Download</a>
+                        </div>
+                    </div>
+                `;
+              const modal = document.getElementById("details-modal");
+              modal.innerHTML = detailsContent;
+              modal.style.display = "block";
+            })
+            .catch((error) => console.error("Error:", error));
+        }
+
+        window.onload = fetchShopData;
+      </script>
+      <div id="details-modal" class="w3-modal"></div>
+
+      <div id="about" class="page glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">About Me</h2>
+          <p class="w3-center w3-large">
+            I'm a forward-thinking developer with a passion for creating
+            seamless, user-centric web experiences.
+          </p>
+          <div class="w3-row-padding w3-center" style="margin-top: 64px">
+            <div class="w3-quarter">
+              <i class="fas fa-code w3-margin-bottom w3-jumbo w3-text-blue"></i>
+              <p class="w3-large">Front-end</p>
+              <p>HTML5, CSS3, JavaScript, React</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+            <div class="w3-quarter">
+              <i
+                class="fas fa-server w3-margin-bottom w3-jumbo w3-text-blue"
+              ></i>
+              <p class="w3-large">Back-end</p>
+              <p>Node.js, Express, Python, Django, PHP (Laravel)</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+            <div class="w3-quarter">
+              <i
+                class="fas fa-database w3-margin-bottom w3-jumbo w3-text-blue"
+              ></i>
+              <p class="w3-large">Databases</p>
+              <p>MongoDB, MySQL, PostgreSQL</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+            <div class="w3-quarter">
+              <i
+                class="fas fa-tools w3-margin-bottom w3-jumbo w3-text-blue"
+              ></i>
+              <p class="w3-large">Tools</p>
+              <p>Git, Docker, AWS, Heroku</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-row-padding w3-center" style="margin-top: 64px">
+            <div class="w3-quarter">
+              <i class="fas fa-code w3-margin-bottom w3-jumbo w3-text-blue"></i>
+              <p class="w3-large">Programming Languages</p>
+              <p>C, C++, C#, Python, Go</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+            <div class="w3-quarter">
+              <i
+                class="fas fa-tools w3-margin-bottom w3-jumbo w3-text-blue"
+              ></i>
+              <p class="w3-large">DevOps</p>
+              <p>CI/CD, Kubernetes, Terraform</p>
+              <div class="skill-bar w3-light-grey">
+                <div class="w3-blue" style="height: 100%; width: 100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="projects" class="page glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">My Projects</h2>
+          <p class="w3-center w3-large">
+            Discover my latest innovative web solutions.
+          </p>
+          <div class="w3-row-padding w3-center" style="margin-top: 64px">
+            <div class="w3-third w3-margin-bottom">
+              <div class="w3-card w3-hover-shadow">
+                <img
+                  src="assets/images/devinow.png"
+                  alt="Devinow PHP Encoder"
+                  style="width: 100%"
+                  class="w3-hover-opacity project-image"
+                />
+                <div class="w3-container w3-white">
+                  <h3>Devinow PHP Encoder</h3>
+                  <p>
+                    Run the Devinow PHP Encoder files on any other server even
+                    without a dedicated loader and need a library or any plugin.
+                  </p>
+                  <p>
+                    <a
+                      href="https://www.rtl-theme.com/devinow-php-encoder-script/"
+                      target="_blank"
+                      rel="nofollow,noindex"
+                      class="w3-button w3-blue w3-margin-bottom w3-hover-light-blue w3-ripple"
+                      >View Details</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="page glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">Contact Me</h2>
+          <p class="w3-center w3-large">
+            Let's collaborate on your next big idea. Reach out to me:
+          </p>
+          <form
+            id="contactForm"
+            class="w3-container w3-card-4 w3-padding-16 w3-white"
+            action="mailto:info@tahaghafuri.ir"
+            target="_blank"
+            style="border-radius: 24px"
+          >
+            <div class="w3-section">
+              <label>Name</label>
+              <input class="w3-input" type="text" name="Name" required />
+              <div
+                class="invalid-feedback"
+                data-popper-placement="bottom"
+              ></div>
+            </div>
+            <div class="w3-section">
+              <label>Email</label>
+              <input class="w3-input" type="email" name="Email" required />
+              <div
+                class="invalid-feedback"
+                data-popper-placement="bottom"
+              ></div>
+            </div>
+            <div class="w3-section">
+              <label>Message</label>
+              <textarea
+                class="w3-input"
+                name="Message"
+                required
+                style="resize: vertical"
+              ></textarea>
+              <div
+                class="invalid-feedback"
+                data-popper-placement="bottom"
+              ></div>
+            </div>
+            <button
+              type="submit"
+              class="w3-button w3-right w3-blue w3-hover-light-blue w3-ripple"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w3-container custom-footer glass-effect">
+      <div class="w3-row">
+        <div class="w3-col m6">
+          <h5>Contact Info</h5>
+          <p>
+            <i class="fas fa-map-marker-alt w3-text-theme"></i> Mashhad, Iran
+          </p>
+          <p><i class="fas fa-phone w3-text-theme"></i> Phone: Private</p>
+          <p>
+            <i class="fas fa-envelope w3-text-theme"></i> Email:
+            <a href="mailto:info@tahghafuri.ir">info@tahghafuri.ir</a>
+          </p>
+        </div>
+        <div class="w3-col m6">
+          <h5>Follow Me</h5>
+          <div class="w3-xlarge w3-padding-16 social-icons">
+            <a
+              href="https://github.com/tahaghafuri"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/tahaghafuri/"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://codepen.io/tahaghafuri/"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-codepen"></i
+            ></a>
+            <a
+              href="https://packagist.org/users/tahaghafuri/"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-php"></i
+            ></a>
+            <a
+              href="https://sourceforge.net/u/tahaghafuri/profile/"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fas fa-code-branch"></i
+            ></a>
+            <a
+              href="https://www.sololearn.com/profile/22699947/"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fas fa-graduation-cap"></i
+            ></a>
+            <a
+              href="https://t.me/tahaghafuri"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-telegram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@tahaaminghafuri"
+              target="_blank"
+              rel="nofollow,noindex"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="https://chat.tahaghafuri.ir/"
+              target="_blank"
+              rel="follow,index"
+              ><i class="fas fa-comments"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <p class="w3-center">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Taha Amin Ghafuri. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/w3.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/OverlayScrollbars.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".header-slideshow").slick({
+          autoplay: true,
+          autoplaySpeed: 3000,
+          dots: true,
+          arrows: false,
+          fade: true,
+          cssEase: "linear",
+        });
+
+        // Page navigation
+        function showPage(pageId) {
+          var pages = document.getElementsByClassName("page");
+          for (var i = 0; i < pages.length; i++) {
+            pages[i].classList.remove("active");
+          }
+          document.getElementById(pageId).classList.add("active");
+        }
+
+        // Add event listeners to navigation links
+        var navLinks = document.querySelectorAll("nav a, #navDemo a");
+        for (var i = 0; i < navLinks.length; i++) {
+          navLinks[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            var pageId = this.getAttribute("href").substr(1);
+            showPage(pageId);
+          });
+        }
+
+        // Form validation with Popper.js
+        const form = document.getElementById("contactForm");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          let isValid = true;
+
+          form.querySelectorAll("input, textarea").forEach(function (element) {
+            if (!element.checkValidity()) {
+              isValid = false;
+              const errorDiv = element.nextElementSibling;
+              errorDiv.textContent = element.validationMessage;
+              Popper.createPopper(element, errorDiv, {
+                placement: "bottom-start",
+              });
+              errorDiv.style.display = "block";
+            } else {
+              element.nextElementSibling.style.display = "none";
+            }
+          });
+
+          if (isValid) {
+            form.submit();
+          }
+        });
+
+        // Smooth Scrolling
+        w3.includeHTML();
+
+        // Initialize OverlayScrollbars with w3css styles
+        OverlayScrollbars(document.body, {
+          scrollbars: {
+            autoHide: "scroll",
+            autoHideDelay: 800,
+            overflowBehavior: {
+              x: "hidden",
+            },
+          },
+          textarea: {
+            dynWidth: false,
+            dynHeight: false,
+          },
+          className: "os-theme-dark w3-bar glass-effect",
+          paddingAbsolute: true,
+        });
+      });
+
+      function toggleNavMenu() {
+        var navDemo = document.getElementById("navDemo");
+        if (navDemo.className.indexOf("w3-show") == -1) {
+          navDemo.className += " w3-show";
+        } else {
+          navDemo.className = navDemo.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </body>
+</html>
