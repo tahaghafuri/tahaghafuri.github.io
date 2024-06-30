@@ -13,13 +13,13 @@
     <meta name="author" content="Taha Amin Ghafuri" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/w3.css" />
+    <link rel="stylesheet" href="https://tahaghafuri.ir/assets/css/w3.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/slick.min.css" />
-    <link rel="stylesheet" href="assets/css/slick-theme.min.css" />
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
-    <link href="assets/css/Vazirmatn-font-face.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/OverlayScrollbars.min.css" />
+    <link rel="stylesheet" href="https://tahaghafuri.ir/assets/css/slick.min.css" />
+    <link rel="stylesheet" href="https://tahaghafuri.ir/assets/css/slick-theme.min.css" />
+    <link rel="stylesheet" href="https://tahaghafuri.ir/assets/css/jquery-ui.min.css" />
+    <link href="https://tahaghafuri.ir/assets/css/Vazirmatn-font-face.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://tahaghafuri.ir/assets/css/OverlayScrollbars.min.css" />
     <style>
       :root {
         --primary-color: #0078d4;
@@ -159,11 +159,11 @@
     <header class="w3-container custom-header w3-animate-top">
       <div class="header-slideshow">
         <div>
-          <img src="assets/images/1.jpg" alt="Technology and Programming" />
+          <img src="https://tahaghafuri.ir/assets/images/1.jpg" alt="Technology and Programming" />
         </div>
-        <div><img src="assets/images/2.jpg" alt="Coding on Laptop" /></div>
+        <div><img src="https://tahaghafuri.ir/assets/images/2.jpg" alt="Coding on Laptop" /></div>
         <div>
-          <img src="assets/images/3.jpg" alt="Modern Development Tools" />
+          <img src="https://tahaghafuri.ir/assets/images/3.jpg" alt="Modern Development Tools" />
         </div>
       </div>
       <h1 class="w3-xxxlarge">Taha Amin Ghafuri</h1>
@@ -284,15 +284,14 @@
       </div>
       <script>
         function fetchBlogData() {
-          fetch("https://tahaghafuri.ir/api/proxy?url=1c151c114202171e03040e135a150909505f5050071d131d5a081a4e434b4b1f19050d")
+          fetch("https://blog.tahaghafuri.ir/rss.xml")
             .then((response) => response.text())
             .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
             .then((data) => {
               const items = data.querySelectorAll("item");
               let blogContent = "";
-              items.forEach((item) => {
+              items.forEach((item, index) => {
                 const title = item.querySelector("title").textContent;
-                const link = item.querySelector("link").textContent;
                 const description = item.querySelector("description").textContent;
                 const pubDate = item.querySelector("pubDate").textContent;
                 blogContent += `
@@ -302,8 +301,23 @@
                         <h3>${title}</h3>
                         <p>${description}</p>
                         <p>Published on: ${pubDate}</p>
-                        <a href="${link}" target="_blank" class="w3-button w3-blue w3-margin-bottom">Read More</a>
+                        <button onclick="openDialog(${index})" class="w3-button w3-blue w3-margin-bottom">Read More</button>
                       </div>
+                    </div>
+                  </div>
+                  <div id="dialog-${index}" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-top w3-card-4">
+                      <header class="w3-container w3-blue">
+                        <span onclick="document.getElementById('dialog-${index}').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <h2>${title}</h2>
+                      </header>
+                      <div class="w3-container">
+                        <p>${description}</p>
+                        <p>Published on: ${pubDate}</p>
+                      </div>
+                      <footer class="w3-container w3-blue">
+                        <p>End of Post</p>
+                      </footer>
                     </div>
                   </div>
                 `;
@@ -311,6 +325,10 @@
               document.getElementById("blog-content").innerHTML = blogContent;
             })
             .catch((error) => console.error("Error:", error));
+        }
+
+        function openDialog(index) {
+          document.getElementById(`dialog-${index}`).style.display = 'block';
         }
 
         document.addEventListener("DOMContentLoaded", fetchBlogData);
@@ -330,7 +348,7 @@
 
       <script>
         function fetchShopData() {
-          fetch("https://tahaghafuri.ir/api/shop")
+          fetch("https://savenet.ir/api/tahaghafuri")
             .then((response) => response.json())
             .then((data) => {
               const shopContent = document.getElementById("shop-content");
@@ -367,9 +385,7 @@
         }
 
         function viewDetails(url) {
-          fetch(
-            "https://tahaghafuri.ir/api/shop?url=" + encodeURIComponent(url)
-          )
+          fetch(url)
             .then((response) => response.json())
             .then((data) => {
               const detailsContent = `
@@ -483,7 +499,7 @@
             <div class="w3-third w3-margin-bottom">
               <div class="w3-card w3-hover-shadow">
                 <img
-                  src="assets/images/devinow.png"
+                  src="https://tahaghafuri.ir/assets/images/devinow.png"
                   alt="Devinow PHP Encoder"
                   style="width: 100%"
                   class="w3-hover-opacity project-image"
@@ -645,12 +661,12 @@
       </p>
     </footer>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/w3.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/OverlayScrollbars.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/jquery.min.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/slick.min.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/w3.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/popper.min.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/OverlayScrollbars.min.js"></script>
+    <script src="https://tahaghafuri.ir/assets/js/jquery-ui.min.js"></script>
     <script>
       $(document).ready(function () {
         $(".header-slideshow").slick({
