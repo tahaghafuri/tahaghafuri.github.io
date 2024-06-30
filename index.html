@@ -348,7 +348,6 @@
 
       <script>
         function fetchShopData() {
-          // https://tahaghafuri.ir/api/shop
           fetch("https://c.tahaghafuri.ir/?url=https://savenet.ir/api/tahaghafuri")
             .then((response) => response.json())
             .then((data) => {
@@ -386,7 +385,6 @@
         }
 
         function viewDetails(url) {
-          // "https://tahaghafuri.ir/api/shop?url=" + encodeURIComponent(url)
           fetch("https://c.tahaghafuri.ir/?url=" + encodeURIComponent(url))
             .then((response) => response.json())
             .then((data) => {
