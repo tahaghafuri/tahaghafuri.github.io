@@ -284,7 +284,7 @@
       </div>
       <script>
         function fetchBlogData() {
-          fetch("https://blog.tahaghafuri.ir/rss.xml")
+          fetch("https://c.tahaghafuri.ir/?url=https://blog.tahaghafuri.ir/rss.xml")
             .then((response) => response.text())
             .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
             .then((data) => {
@@ -348,7 +348,8 @@
 
       <script>
         function fetchShopData() {
-          fetch("https://savenet.ir/api/tahaghafuri")
+          // https://tahaghafuri.ir/api/shop
+          fetch("https://c.tahaghafuri.ir/?url=https://savenet.ir/api/tahaghafuri")
             .then((response) => response.json())
             .then((data) => {
               const shopContent = document.getElementById("shop-content");
@@ -385,7 +386,8 @@
         }
 
         function viewDetails(url) {
-          fetch(url)
+          // "https://tahaghafuri.ir/api/shop?url=" + encodeURIComponent(url)
+          fetch("https://c.tahaghafuri.ir/?url=" + encodeURIComponent(url))
             .then((response) => response.json())
             .then((data) => {
               const detailsContent = `
@@ -396,7 +398,7 @@
                             <h2>${data.SaveNet_Entry_Title}</h2>
                         </header>
                         <div class="w3-container">
-                            <img src="${data.SaveNet_Entry_Picture}" alt="${data.SaveNet_Entry_Title}" style="width:100%">
+                            <img src="https://c.tahaghafuri.ir/?url=${data.SaveNet_Entry_Picture}" alt="${data.SaveNet_Entry_Title}" style="width:100%">
                             <p>${data.SaveNet_Entry_Description}</p>
                             <p>Suitable for target users: ${data.SaveNet_Entry_Suitable}</p>
                             <p>Size: ${data.SaveNet_Entry_Size}</p>
