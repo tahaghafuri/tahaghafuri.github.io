@@ -179,6 +179,11 @@
         ><i class="fas fa-home"></i> Home</a
       >
       <a
+        href="#blog"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        ><i class="fas fa-blog"></i> Blog</a
+      >
+      <a
         href="#about"
         class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
         ><i class="fas fa-user"></i> About</a
@@ -216,6 +221,12 @@
         class="w3-bar-item w3-button w3-padding-large"
         onclick="toggleNavMenu()"
         >Home</a
+      >
+      <a
+        href="#blog"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="toggleNavMenu()"
+        >Blog</a
       >
       <a
         href="#about"
@@ -264,6 +275,46 @@
           </div>
         </div>
       </div>
+      
+      <div id="blog" class="page glass-effect">
+        <div class="w3-container w3-padding-64">
+          <h2 class="w3-center w3-xxlarge w3-text-blue">Blog</h2>
+          <div id="blog-content" class="w3-row-padding w3-center" style="margin-top: 64px"></div>
+        </div>
+      </div>
+      <script>
+        function fetchBlogData() {
+          fetch("https://tahaghafuri.ir/api/proxy?url=1c151c114202171e03040e135a150909505f5050071d131d5a081a4e434b4b1f19050d")
+            .then((response) => response.text())
+            .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+            .then((data) => {
+              const items = data.querySelectorAll("item");
+              let blogContent = "";
+              items.forEach((item) => {
+                const title = item.querySelector("title").textContent;
+                const link = item.querySelector("link").textContent;
+                const description = item.querySelector("description").textContent;
+                const pubDate = item.querySelector("pubDate").textContent;
+                blogContent += `
+                  <div class="w3-third w3-margin-bottom">
+                    <div class="w3-card w3-hover-shadow">
+                      <div class="w3-container w3-white">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <p>Published on: ${pubDate}</p>
+                        <a href="${link}" target="_blank" class="w3-button w3-blue w3-margin-bottom">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              });
+              document.getElementById("blog-content").innerHTML = blogContent;
+            })
+            .catch((error) => console.error("Error:", error));
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchBlogData);
+      </script>
 
       <div id="shop" class="page glass-effect">
         <div class="w3-container w3-padding-64">
