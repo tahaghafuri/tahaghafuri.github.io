@@ -168,7 +168,7 @@
       </div>
       <h1 class="w3-xxxlarge">Taha Amin Ghafuri</h1>
       <p class="w3-large">
-        php(laravel),C & C++ & C# & @python Developer & Go,Devops specialist
+        php(laravel),C & C++ & C# & python Developer & Go,Devops specialist
       </p>
     </header>
 
@@ -535,9 +535,8 @@
           <form
             id="contactForm"
             class="w3-container w3-card-4 w3-padding-16 w3-white"
-            action="mailto:info@tahaghafuri.ir"
-            target="_blank"
             style="border-radius: 24px"
+            onsubmit="sendEmail(event)"
           >
             <div class="w3-section">
               <label>Name</label>
@@ -575,6 +574,15 @@
               Send
             </button>
           </form>
+          <script>
+            function sendEmail(event) {
+              event.preventDefault();
+              const form = document.getElementById('contactForm');
+              const formData = new FormData(form);
+              const mailtoLink = `mailto:info@tahaghafuri.ir?subject=Contact%20Form%20Submission&body=Name:%20${formData.get('Name')}%0AEmail:%20${formData.get('Email')}%0AMessage:%20${formData.get('Message')}`;
+              window.location.href = mailtoLink;
+            }
+          </script>
         </div>
       </div>
     </main>
