@@ -146,9 +146,23 @@
         display: none !important;
       }
     </style>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.display = "block";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
   </head>
-
   <body>
+    <div id="loader" style="display: none;">
+      <img src="https://tahaghafuri.ir/assets/css/ajax-loader.gif" alt="Loading..." />
+    </div>
+
     <header class="w3-container custom-header w3-animate-top">
       <div class="header-slideshow">
         <div>
@@ -161,7 +175,7 @@
       </div>
       <h1 class="w3-xxxlarge">Taha Amin Ghafuri</h1>
       <p class="w3-large">
-        php(laravel),C & C++ & C# & @python Developer & Go,Devops specialist
+        php(laravel),C & C++ & C# & python Developer & Go,Devops specialist
       </p>
     </header>
 
@@ -261,6 +275,12 @@
               rel="follow,index"
               ><i class="fas fa-comments"></i
             ></a>
+            <a
+            href="https://cloud.anylogic.com/profile/user/05863453-0166-4ae6-8241-365f6db185e4"
+            target="_blank"
+            rel="nofollow,noindex"
+            ><i class="fas fa-cloud"></i
+          ></a>
           </div>
         </div>
       </div>
