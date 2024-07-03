@@ -284,7 +284,7 @@
       </div>
       <script>
         function fetchBlogData() {
-          fetch("https://c.tahaghafuri.ir/?url=https://blog.tahaghafuri.ir/rss.xml")
+          fetch("https://tahaghafuri.ir/api/proxy/?url=1c151c114202171e03040e135a150909505f5050071d131d5a081a4e434b4b1f19050d")
             .then((response) => response.text())
             .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
             .then((data) => {
@@ -348,7 +348,7 @@
 
       <script>
         function fetchShopData() {
-          fetch("https://c.tahaghafuri.ir/?url=https://savenet.ir/api/tahaghafuri")
+          fetch("https://tahaghafuri.ir/api/shop/")
             .then((response) => response.json())
             .then((data) => {
               const shopContent = document.getElementById("shop-content");
@@ -385,7 +385,7 @@
         }
 
         function viewDetails(url) {
-          fetch("https://c.tahaghafuri.ir/?url=" + encodeURIComponent(url))
+          fetch("https://tahaghafuri.ir/api/shop/?url=" + encodeURIComponent(url))
             .then((response) => response.json())
             .then((data) => {
               const detailsContent = `
