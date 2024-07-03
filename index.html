@@ -153,9 +153,23 @@
         display: none !important;
       }
     </style>
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== "complete") {
+          document.querySelector("body").style.visibility = "hidden";
+          document.querySelector("#loader").style.display = "block";
+        } else {
+          document.querySelector("#loader").style.display = "none";
+          document.querySelector("body").style.visibility = "visible";
+        }
+      };
+    </script>
   </head>
-
   <body>
+    <div id="loader" style="display: none;">
+      <img src="https://tahaghafuri.ir/assets/css/ajax-loader.gif" alt="Loading..." />
+    </div>
+
     <header class="w3-container custom-header w3-animate-top">
       <div class="header-slideshow">
         <div>
