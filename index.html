@@ -152,6 +152,15 @@
       .os-scrollbar-horizontal {
         display: none !important;
       }
+
+      @media (max-width: 768px) {
+        .w3-bar-item {
+          display: none;
+        }
+        .w3-bar-item.w3-right {
+          display: block;
+        }
+      }
     </style>
     <script>
       document.onreadystatechange = function () {
