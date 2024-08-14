@@ -268,7 +268,7 @@
 
       if (isAuthenticated) {
         const userInfo = await logtoClient.fetchUserInfo();
-        document.getElementById('username').innerText = userInfo.username;
+        document.getElementById('username').innerText = userInfo.profile.username;
         document.getElementById('login-button').style.display = 'none';
         document.getElementById('signup-button').style.display = 'none';
         document.getElementById('profile-button').style.display = 'block';
@@ -285,19 +285,6 @@
         thead.append(tr);
         table.append(thead);
 
-        const tbody = document.createElement('tbody');
-
-        for (const [key, value] of Object.entries(userInfo)) {
-          const tr = document.createElement('tr');
-          const tdName = document.createElement('td');
-          const tdValue = document.createElement('td');
-          tdName.innerHTML = key;
-          tdValue.innerHTML = typeof value === 'string' ? value : JSON.stringify(value);
-          tr.append(tdName, tdValue);
-          tbody.append(tr);
-        }
-
-        table.append(tbody);
         document.getElementById('profile').appendChild(table);
 
         // Add logout button to profile page
@@ -320,10 +307,6 @@
 
       document.getElementById('signup-button').addEventListener('click', () => {
         logtoClient.signIn('http://tahaghafuri.ir/callback');
-      });
-
-      document.getElementById('profile-button').addEventListener('click', () => {
-        logtoClient.signOut('http://tahaghafuri.ir');
       });
     </script>
 
