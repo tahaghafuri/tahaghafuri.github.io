@@ -268,24 +268,10 @@
 
       if (isAuthenticated) {
         const userInfo = await logtoClient.fetchUserInfo();
-        document.getElementById('username').innerText = userInfo.profile.username;
+        document.getElementById('username').innerText = userInfo.username;
         document.getElementById('login-button').style.display = 'none';
         document.getElementById('signup-button').style.display = 'none';
         document.getElementById('profile-button').style.display = 'block';
-
-        // Generate display table for user info
-        const table = document.createElement('table');
-        const thead = document.createElement('thead');
-        const tr = document.createElement('tr');
-        const thName = document.createElement('th');
-        const thValue = document.createElement('th');
-        thName.innerHTML = 'Name';
-        thValue.innerHTML = 'Value';
-        tr.append(thName, thValue);
-        thead.append(tr);
-        table.append(thead);
-
-        document.getElementById('profile').appendChild(table);
 
         // Add logout button to profile page
         const logoutButton = document.createElement('button');
@@ -804,15 +790,6 @@
           paddingAbsolute: true,
         });
       });
-
-      /*function toggleNavMenu() {
-        var navDemo = document.getElementById("navDemo");
-        if (navDemo.className.indexOf("w3-show") == -1) {
-          navDemo.className += " w3-show";
-        } else {
-          navDemo.className = navDemo.className.replace(" w3-show", "");
-        }
-      }*/
     </script>
   </body>
 </html>
