@@ -236,56 +236,102 @@
         class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
         ><i class="fas fa-envelope"></i> Contact</a
       >
-      <!-- <a
-        href="javascript:void(0)"
-        class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-        onclick="toggleNavMenu()"
-        >&#9776;</a
-      > -->
+      <a
+        href="#login"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        id="login-button"
+        ><i class="fas fa-sign-in-alt"></i> Login</a
+      >
+      <a
+        href="#signup"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        id="signup-button"
+        ><i class="fas fa-user-plus"></i> Signup</a
+      >
+      <a
+        href="#profile"
+        class="w3-bar-item w3-button w3-padding-large w3-hover-text-blue"
+        id="profile-button"
+        style="display: none;"
+        ><i class="fas fa-user"></i> <span id="username"></span></a
+      >
     </nav>
+    <script type="module">
+      import LogtoClient from 'https://cdn.jsdelivr.net/npm/@logto/browser@2.2.13/+esm';
 
-    <!-- <div
-      id="navDemo"
-      class="w3-bar-block glass-effect w3-hide w3-hide-large w3-hide-medium"
-      style="border-radius: 24px; margin: 16px;"
-    >
-      <a
-        href="#home"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >Home</a
-      >
-      <a
-        href="#blog"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >Blog</a
-      >
-      <a
-        href="#about"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >About</a
-      >
-      <a
-        href="#projects"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >Projects</a
-      >
-      <a
-        href="#shop"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >Shop</a
-      >
-      <a
-        href="#contact"
-        class="w3-bar-item w3-button w3-padding-large"
-        onclick="toggleNavMenu()"
-        >Contact</a
-      >
-    </div> -->
+      const logtoClient = new LogtoClient({
+        endpoint: 'https://auth.tahaghafuri.ir/',
+        appId: 'pmcwoluzo9luluspwaflv',
+      });
+
+      const callbackHandler = async () => {
+        await logtoClient.handleSignInCallback(window.location.href);
+
+        if (!logtoClient.isAuthenticated) {
+          alert('Failed to sign in');
+          return;
+        }
+
+        window.location.assign('/');
+      };
+
+      const isAuthenticated = await logtoClient.isAuthenticated();
+
+      if (isAuthenticated) {
+        const userInfo = await logtoClient.getIdTokenClaims();
+        document.getElementById('username').innerText = userInfo.name;
+        document.getElementById('login-button').style.display = 'none';
+        document.getElementById('signup-button').style.display = 'none';
+        document.getElementById('profile-button').style.display = 'block';
+
+        // Generate display table for ID token claims
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tr = document.createElement('tr');
+        const thName = document.createElement('th');
+        const thValue = document.createElement('th');
+        thName.innerHTML = 'Name';
+        thValue.innerHTML = 'Value';
+        tr.append(thName, thValue);
+        thead.append(tr);
+        table.append(thead);
+
+        const tbody = document.createElement('tbody');
+
+        for (const [key, value] of Object.entries(userInfo)) {
+          const tr = document.createElement('tr');
+          const tdName = document.createElement('td');
+          const tdValue = document.createElement('td');
+          tdName.innerHTML = key;
+          tdValue.innerHTML = typeof value === 'string' ? value : JSON.stringify(value);
+          tr.append(tdName, tdValue);
+          tbody.append(tr);
+        }
+
+        table.append(tbody);
+        document.getElementById('profile').appendChild(table);
+      } else {
+        document.getElementById('login-button').style.display = 'block';
+        document.getElementById('signup-button').style.display = 'block';
+        document.getElementById('profile-button').style.display = 'none';
+      }
+
+      document.getElementById('login-button').addEventListener('click', () => {
+        logtoClient.signIn('https://tahaghafuri.ir/?callback');
+      });
+
+      document.getElementById('signup-button').addEventListener('click', () => {
+        logtoClient.signIn('http://tahaghafuri.ir/?callback');
+      });
+
+      document.getElementById('profile-button').addEventListener('click', () => {
+        logtoClient.signOut('http://tahaghafuri.ir');
+      });
+
+      if (window.location.pathname === '/?callback') {
+        callbackHandler();
+      }
+    </script>
 
     <main class="w3-content" style="max-width: 2000px; margin-top: 46px">
       <div id="home" class="page active glass-effect">
