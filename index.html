@@ -745,6 +745,16 @@
           document.getElementById(pageId).classList.add("active");
         }
 
+        // Add event listeners to navigation links
+        var navLinks = document.querySelectorAll("nav a");
+        for (var i = 0; i < navLinks.length; i++) {
+          navLinks[i].addEventListener("click", function (e) {
+            e.preventDefault();
+            var pageId = this.getAttribute("href").substr(1);
+            showPage(pageId);
+          });
+        }
+
         // Form validation with Popper.js
         const form = document.getElementById("contactForm");
         form.addEventListener("submit", function (event) {
@@ -790,15 +800,6 @@
           paddingAbsolute: true,
         });
       });
-
-      /*function toggleNavMenu() {
-        var navDemo = document.getElementById("navDemo");
-        if (navDemo.className.indexOf("w3-show") == -1) {
-          navDemo.className += " w3-show";
-        } else {
-          navDemo.className = navDemo.className.replace(" w3-show", "");
-        }
-      }*/
     </script>
   </body>
 </html>
