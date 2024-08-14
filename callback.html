@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Callback</title>
+    <meta name="robots" content="noindex, nofollow">
+  </head>
+  <body>
+    <script type="module">
+      import LogtoClient from 'https://cdn.jsdelivr.net/npm/@logto/browser@2.2.13/+esm';
+      const logtoClient = new LogtoClient({
+        endpoint: 'https://auth.tahaghafuri.ir/',
+        appId: 'pmcwoluzo9luluspwaflv',
+      });
+      const callbackHandler = async () => {
+        await logtoClient.handleSignInCallback(window.location.href);
+
+        if (!await logtoClient.isAuthenticated()) {
+          // Handle failed sign-in
+          alert('Failed to sign in');
+          return;
+        }
+
+        // Handle successful sign-in
+        window.location.assign('/');
+      };
+      callbackHandler();
+    </script>
+  </body>
+</html>
