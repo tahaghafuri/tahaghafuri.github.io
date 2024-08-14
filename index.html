@@ -257,23 +257,12 @@
       >
     </nav>
     <script type="module">
-      import LogtoClient from 'https://cdn.jsdelivr.net/npm/@logto/browser@2.2.13/+esm';
+      import LogtoClient from 'https://cdn.jsdelivr.net/npm/@logto/browser@latest/+esm';
 
       const logtoClient = new LogtoClient({
         endpoint: 'https://auth.tahaghafuri.ir/',
         appId: 'pmcwoluzo9luluspwaflv',
       });
-
-      const callbackHandler = async () => {
-        await logtoClient.handleSignInCallback(window.location.href);
-
-        if (!logtoClient.isAuthenticated) {
-          alert('Failed to sign in');
-          return;
-        }
-
-        window.location.assign('/');
-      };
 
       const isAuthenticated = await logtoClient.isAuthenticated();
 
@@ -317,20 +306,16 @@
       }
 
       document.getElementById('login-button').addEventListener('click', () => {
-        logtoClient.signIn('https://tahaghafuri.ir/?callback');
+        logtoClient.signIn('https://tahaghafuri.ir/callback');
       });
 
       document.getElementById('signup-button').addEventListener('click', () => {
-        logtoClient.signIn('http://tahaghafuri.ir/?callback');
+        logtoClient.signIn('http://tahaghafuri.ir/callback');
       });
 
       document.getElementById('profile-button').addEventListener('click', () => {
         logtoClient.signOut('http://tahaghafuri.ir');
       });
-
-      if (window.location.pathname === '/?callback') {
-        callbackHandler();
-      }
     </script>
 
     <main class="w3-content" style="max-width: 2000px; margin-top: 46px">
