@@ -267,13 +267,13 @@
       const isAuthenticated = await logtoClient.isAuthenticated();
 
       if (isAuthenticated) {
-        const userInfo = await logtoClient.getIdTokenClaims();
-        document.getElementById('username').innerText = userInfo.name;
+        const userInfo = await logtoClient.fetchUserInfo();
+        document.getElementById('username').innerText = userInfo.username;
         document.getElementById('login-button').style.display = 'none';
         document.getElementById('signup-button').style.display = 'none';
         document.getElementById('profile-button').style.display = 'block';
 
-        // Generate display table for ID token claims
+        // Generate display table for user info
         const table = document.createElement('table');
         const thead = document.createElement('thead');
         const tr = document.createElement('tr');
@@ -299,6 +299,15 @@
 
         table.append(tbody);
         document.getElementById('profile').appendChild(table);
+
+        // Add logout button to profile page
+        const logoutButton = document.createElement('button');
+        logoutButton.innerText = 'Logout';
+        logoutButton.className = 'w3-button w3-red w3-margin-top';
+        logoutButton.addEventListener('click', () => {
+          logtoClient.signOut('https://tahaghafuri.ir');
+        });
+        document.getElementById('profile').appendChild(logoutButton);
       } else {
         document.getElementById('login-button').style.display = 'block';
         document.getElementById('signup-button').style.display = 'block';
@@ -319,8 +328,8 @@
     </script>
 
     <main class="w3-content" style="max-width: 2000px; margin-top: 46px">
-      <div id="profile" class="page active glass-effect"></div>
-      
+      <div id="profile" class="page glass-effect"></div>
+
       <div id="home" class="page active glass-effect">
         <div class="w3-container w3-padding-64">
           <h2 class="w3-center w3-xxlarge w3-text-blue">
@@ -765,16 +774,6 @@
             pages[i].classList.remove("active");
           }
           document.getElementById(pageId).classList.add("active");
-        }
-
-        // Add event listeners to navigation links
-        var navLinks = document.querySelectorAll("nav a, #navDemo a");
-        for (var i = 0; i < navLinks.length; i++) {
-          navLinks[i].addEventListener("click", function (e) {
-            e.preventDefault();
-            var pageId = this.getAttribute("href").substr(1);
-            showPage(pageId);
-          });
         }
 
         // Form validation with Popper.js
