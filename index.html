@@ -278,7 +278,9 @@
           logoutButton.innerText = 'Logout';
           logoutButton.className = 'w3-button w3-red w3-margin-top';
           logoutButton.addEventListener('click', () => {
-            Clerk.signOut();
+            Clerk.signOut().then(() => {
+              location.reload();
+            });
           });
           document.getElementById('profile').appendChild(logoutButton);
         } else {
