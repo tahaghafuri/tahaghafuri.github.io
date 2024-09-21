@@ -256,46 +256,43 @@
         ><i class="fas fa-user"></i> <span id="username"></span></a
       >
     </nav>
-    <script
-      async
-      crossorigin="anonymous"
-      data-clerk-publishable-key="pk_live_Y2xlcmsudGFoYWdoYWZ1cmkuaXIk"
-      src="https://clerk.tahaghafuri.ir/npm/@clerk/clerk-js@4/dist/clerk.browser.js"
-      type="text/javascript">
-    </script>
-    <script>
-      window.addEventListener('load', async function () {
-        await Clerk.load();
+    <script type="module">
+      import LogtoClient from 'https://cdn.jsdelivr.net/npm/@logto/browser@latest/+esm';
 
-        if (Clerk.user) {
-          document.getElementById('username').innerText = Clerk.user.username;
-          document.getElementById('login-button').style.display = 'none';
-          document.getElementById('signup-button').style.display = 'none';
-          document.getElementById('profile-button').style.display = 'block';
+      const logtoClient = new LogtoClient({
+        endpoint: 'https://auth.tahaghafuri.ir/',
+        appId: 'pmcwoluzo9luluspwaflv',
+      });
 
-          // Add logout button to profile page
-          const logoutButton = document.createElement('button');
-          logoutButton.innerText = 'Logout';
-          logoutButton.className = 'w3-button w3-red w3-margin-top';
-          logoutButton.addEventListener('click', () => {
-            Clerk.signOut().then(() => {
-              location.reload();
-            });
-          });
-          document.getElementById('profile').appendChild(logoutButton);
-        } else {
-          document.getElementById('login-button').style.display = 'block';
-          document.getElementById('signup-button').style.display = 'block';
-          document.getElementById('profile-button').style.display = 'none';
-        }
+      const isAuthenticated = await logtoClient.isAuthenticated();
 
-        document.getElementById('login-button').addEventListener('click', () => {
-          Clerk.openSignIn();
+      if (isAuthenticated) {
+        const userInfo = await logtoClient.fetchUserInfo();
+        document.getElementById('username').innerText = userInfo.username;
+        document.getElementById('login-button').style.display = 'none';
+        document.getElementById('signup-button').style.display = 'none';
+        document.getElementById('profile-button').style.display = 'block';
+
+        // Add logout button to profile page
+        const logoutButton = document.createElement('button');
+        logoutButton.innerText = 'Logout';
+        logoutButton.className = 'w3-button w3-red w3-margin-top';
+        logoutButton.addEventListener('click', () => {
+          logtoClient.signOut('https://tahaghafuri.ir');
         });
+        document.getElementById('profile').appendChild(logoutButton);
+      } else {
+        document.getElementById('login-button').style.display = 'block';
+        document.getElementById('signup-button').style.display = 'block';
+        document.getElementById('profile-button').style.display = 'none';
+      }
 
-        document.getElementById('signup-button').addEventListener('click', () => {
-          Clerk.openSignUp();
-        });
+      document.getElementById('login-button').addEventListener('click', () => {
+        logtoClient.signIn('https://tahaghafuri.ir/callback');
+      });
+
+      document.getElementById('signup-button').addEventListener('click', () => {
+        logtoClient.signIn('http://tahaghafuri.ir/callback');
       });
     </script>
 
